@@ -1,0 +1,11 @@
+{
+    "${codeofconduct_file}": "CODE_OF_CONDUCT.md",
+    "${contributing_file}": "CONTRIBUTING.md",
+    "${description}": "A collection of script generation helpers and templates.",
+    "${license_file}": "LICENSE.txt",
+    "${license_type}": "MIT",
+    "${merge_term}": "pull request",
+    "${project_name}": "scriptgen",
+    "${repo_link}": "https://github.com/Fopoon/scriptgen",
+    "${version}": "0.0.1"
+}
