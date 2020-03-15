@@ -7,5 +7,5 @@
     "${merge_term}": "pull request",
     "${project_name}": "scriptgen",
     "${repo_link}": "https://github.com/Fopoon/scriptgen",
-    "${version}": "0.0.1"
+    "${version}": "0.0.2"
 }
