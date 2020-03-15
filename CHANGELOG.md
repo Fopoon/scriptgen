@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.0.2
+
+- Added default values for the builder classes.
+- Added optional parameters.
+- Exposed `CSharpBlockBuilder` class in `scriptgen.templates.csharp` package.
+- Bug fixes.
+
 ## v0.0.1
 
 - Added `IndentType`, `StringBuilder`, and `BlockBuilder` classes.
