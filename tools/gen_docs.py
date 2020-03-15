@@ -20,7 +20,7 @@ def get_text(
 ) -> str:
     sb = StringBuilder()
     if timestamp:
-        sb.wl(str(markdown_autogen()).strip())
+        sb.wb(markdown_autogen())
         sb.nl()
     sb.wl(interpolate_text(template, expressions))
     return str(sb)
