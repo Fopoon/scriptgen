@@ -17,13 +17,22 @@ class StringBuilder:
     indent_tab: str = "\t"
     new_line: str = linesep
 
+    default_indent_len: int = 0
+    default_indent_space_len: int = 4
+    default_indent_type: IndentType = IndentType.SPACES
+    default_rstrip: bool = False
+
     def __init__(
             self,
-            indent_len: int = 0,
-            indent_space_len: int = 4,
-            indent_type: IndentType = IndentType.SPACES,
-            rstrip: bool = False
+            indent_len: int = None,
+            indent_space_len: int = None,
+            indent_type: IndentType = None,
+            rstrip: bool = None
     ) -> None:
+        indent_len = indent_len if indent_len is not None else StringBuilder.default_indent_len
+        indent_space_len = indent_space_len if indent_space_len is not None else StringBuilder.default_indent_space_len
+        indent_type = indent_type if indent_type is not None else StringBuilder.default_indent_type
+        rstrip = rstrip if rstrip is not None else StringBuilder.default_rstrip
         self.indent_len = indent_len
         self.indent_space_len: int = indent_space_len
         self.indent_type: IndentType = indent_type
@@ -131,15 +140,18 @@ class StringBuilder:
 
 class BlockBuilder(StringBuilder):
 
+    default_indent_len: int = 1
+
     def __init__(
             self,
             header: str = "",
             footer: str = "",
-            indent_len: int = 1,
-            indent_space_len: int = 4,
-            indent_type: IndentType = IndentType.SPACES,
-            rstrip: bool = False
+            indent_len: int = None,
+            indent_space_len: int = None,
+            indent_type: IndentType = None,
+            rstrip: bool = None
     ) -> None:
+        indent_len = indent_len if indent_len is not None else BlockBuilder.default_indent_len
         StringBuilder.__init__(
             self,
             indent_len=indent_len,

@@ -8,15 +8,18 @@ from scriptgen import BlockBuilder, IndentType, StringBuilder, timestamp
 
 class CSharpBlockBuilder(BlockBuilder):
 
+    default_semicolon_end: bool = False
+
     def __init__(
             self,
             header: str = "",
-            semi_colon_end: bool = False,
-            indent_len: int = 1,
-            indent_space_len: int = 4,
-            indent_type: IndentType = IndentType.SPACES,
-            rstrip: bool = False
+            semicolon_end: bool = None,
+            indent_len: int = None,
+            indent_space_len: int = None,
+            indent_type: IndentType = None,
+            rstrip: bool = None
     ) -> None:
+        semicolon_end = semicolon_end if semicolon_end is not None else CSharpBlockBuilder.default_semicolon_end
         BlockBuilder.__init__(
             self,
             indent_len=indent_len,
@@ -25,7 +28,7 @@ class CSharpBlockBuilder(BlockBuilder):
             rstrip=rstrip
         )
         self.header = f"{header}{self.new_line}{{{self.new_line}" if header else f"{{{self.new_line}"
-        self.footer = f"}}{';' if semi_colon_end else ''}{self.new_line}"
+        self.footer = f"}}{';' if semicolon_end else ''}{self.new_line}"
 
 
 def csharp_autogen() -> StringBuilder:
