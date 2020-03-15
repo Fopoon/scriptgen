@@ -182,6 +182,10 @@ namespace Sample
 
 ```
 
+<hr/>
+
+Look at this [script](tools/gen_docs.py) to see its practical use case.
+
 ## Contribution
 
 Suggestions and contributions are always welcome.

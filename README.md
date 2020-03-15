@@ -1,4 +1,4 @@
-[//]: # (Auto-generated: 2020-03-15T04:25:43.361224)
+[//]: # (Auto-generated: 2020-03-15T13:57:00.620912)
 
 # scriptgen
 
@@ -183,6 +183,10 @@ namespace Sample
 }
 
 ```
+
+<hr/>
+
+Look at this [script](tools/gen_docs.py) to see its practical use case.
 
 ## Contribution
 
