@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from ._csharp import \
+    CSharpBlockBuilder, \
     csharp_autogen, \
     csharp_block, \
     csharp_class, \
