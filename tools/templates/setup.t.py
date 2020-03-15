@@ -8,8 +8,8 @@ NAME = '${project_name}'
 VERSION = '${version}'
 DESCRIPTION = '${description}'
 HOME = Path(__file__).parent
-README = (HOME / 'README.md').read_text()
-CHANGELOG = (HOME / 'CHANGELOG.md').read_text()
+README = (HOME / '${readme_file}').read_text()
+CHANGELOG = (HOME / '${changelog_file}').read_text()
 AUTHOR = 'Elmer Nocon, fopoon'
 AUTHOR_EMAIL = 'elmernocon@gmail.com'
 LICENSE = '${license_type}'
@@ -17,8 +17,8 @@ PLATFORMS = 'Any'
 URL = '${repo_link}'
 DOWNLOAD_URL = 'https://pypi.org/project/${project_name}/'
 CLASSIFIERS = [
-    'Development Status :: 1 - Planning',
-    'License :: OSI Approved :: MIT License',
+    'Development Status :: ${python_development_status}',
+    'License :: OSI Approved :: ${license_type} License',
     'Operating System :: MacOS :: MacOS X',
     'Operating System :: Microsoft :: Windows :: Windows 10',
     'Operating System :: Unix',
