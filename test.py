@@ -8,7 +8,7 @@ import tests
 
 
 def set_logger_level(level):
-    from funity import __name__ as module_name
+    from scriptgen import __name__ as module_name
     logging.basicConfig()
     logging.getLogger(module_name).setLevel(level)
 

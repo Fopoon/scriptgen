@@ -9,7 +9,7 @@ from scriptgen import \
     interpolate_text, \
     write_text_file
 
-from scriptgen.templates.markdown._markdown import \
+from scriptgen.templates.markdown import \
     markdown_autogen
 
 
@@ -29,14 +29,16 @@ def get_text(
 if __name__ == "__main__":
     cwp = Path(getcwd())
 
-    json_path = cwp / "template" / "VALUES.t.json"
+    templates_dir_name = "templates"
+
+    json_path = cwp / templates_dir_name / "VALUES.t.json"
     json_text = json_path.read_text()
     json = loads(json_text)
 
     templates = {
-        (cwp / "template" / "README.t.md"): (cwp.parent / "README.md"),
-        (cwp / "template" / "CONTRIBUTING.t.md"): (cwp.parent / "CONTRIBUTING.md"),
-        (cwp / "template" / "setup.t.py"): (cwp.parent / "setup.py")
+        (cwp / templates_dir_name / "README.t.md"): (cwp.parent / "README.md"),
+        (cwp / templates_dir_name / "CONTRIBUTING.t.md"): (cwp.parent / "CONTRIBUTING.md"),
+        (cwp / templates_dir_name / "setup.t.py"): (cwp.parent / "setup.py")
     }
 
     for template_path, target_path in templates.items():
