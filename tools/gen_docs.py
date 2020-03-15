@@ -16,10 +16,10 @@ from scriptgen.templates.markdown import \
 def get_text(
     template: str,
     expressions: Dict[str, str],
-    timestamp: bool = True
+    template_name: str = None
 ) -> str:
     sb = StringBuilder()
-    if timestamp:
+    if template_name.casefold().endswith(".md"):
         sb.wb(markdown_autogen())
         sb.nl()
     sb.wl(interpolate_text(template, expressions))
@@ -42,12 +42,11 @@ if __name__ == "__main__":
     }
 
     for template_path, target_path in templates.items():
-        template_extension = template_path.suffix
         template_text = template_path.read_text()
         text = get_text(
             template_text,
             json,
-            timestamp=(template_extension in [".md"]))
+            template_name=template_path.name)
         write_text_file(
             text,
             target_path,
