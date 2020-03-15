@@ -5,7 +5,7 @@ from scriptgen import BlockBuilder, StringBuilder, timestamp
 
 
 def markdown_autogen() -> StringBuilder:
-    return markdown_comment(f"Auto-generated: {timestamp()}")
+    return markdown_comment(f"Auto-generated: {timestamp()}", padded=False)
 
 
 def markdown_code_block(language: str = None) -> StringBuilder:
@@ -18,17 +18,22 @@ def markdown_code_block(language: str = None) -> StringBuilder:
     return bb
 
 
-def markdown_comment(*args: str) -> StringBuilder:
+def markdown_comment(
+        *args: str,
+        padded: bool = True) -> StringBuilder:
     sb = StringBuilder()
     if args:
-        sb.nl()
+        if padded:
+            sb.nl()
         for arg in args:
             sb.wl(f"[//]: # ({arg})")
-        sb.nl()
+        if padded:
+            sb.nl()
     return sb
 
 
 def markdown_inline(
         value: str,
-        decorator: str) -> str:
+        decorator: str = None) -> str:
+    decorator = decorator if decorator else ""
     return f"{decorator}{value}{decorator[::-1]}"
