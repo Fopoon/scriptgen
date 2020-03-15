@@ -39,7 +39,7 @@ print("Hello World!")
 """
         self.assertEqual(expected_str, code_block_str)
 
-    def test_csharp_comment(self):
+    def test_markdown_comment(self):
         comment_str = str(markdown_comment("a", "b"))
         expected_str = """
 [//]: # (a)
