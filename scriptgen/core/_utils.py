@@ -9,7 +9,7 @@ from typing import Callable, Dict, List, Optional
 def diff_lines(
         lines_1: List[str],
         lines_2: List[str],
-        filter_func: Callable[[str], bool] = None
+        filter_func: Callable[[str, int], bool] = None
 ) -> List[str]:
     len_1 = len(lines_1)
     len_2 = len(lines_2)
@@ -19,8 +19,8 @@ def diff_lines(
         a = lines_1[i]
         b = lines_2[i]
         if filter_func and \
-                filter_func(a) and \
-                filter_func(b):
+                filter_func(a, i) and \
+                filter_func(b, i):
             continue
         if a != b:
             diff.append(f"{a.strip()} → {b.strip()}")
@@ -36,7 +36,7 @@ def diff_lines(
 def diff_text(
         text_1: str,
         text_2: str,
-        filter_func: Callable[[str], bool] = None
+        filter_func: Callable[[str, int], bool] = None
 ) -> List[str]:
     lines_1 = text_1.splitlines(keepends=True)
     lines_2 = text_2.splitlines(keepends=True)
@@ -60,8 +60,8 @@ def write_text_file(
         text: str,
         path: Path,
         diff_show_len: int = 5,
-        diff_func: Callable[[str, str, Optional[Callable[[str], bool]]], List[str]] = None,
-        filter_func: Callable[[str], bool] = None,
+        diff_func: Callable[[str, str, Optional[Callable[[str, int], bool]]], List[str]] = None,
+        filter_func: Callable[[str, int], bool] = None,
         log_func: Callable[[str], None] = None
 ) -> None:
     if not path.parent.exists():

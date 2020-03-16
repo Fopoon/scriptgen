@@ -65,6 +65,6 @@ if __name__ == "__main__":
             # checks for relevant changes between two texts to determine whether to skip writing into a file.
             diff_func=diff_text,
             # filters out lines when checking for differences.
-            filter_func=lambda line: line.startswith("[//]: # (Auto-generated"),
+            filter_func=lambda line, idx: idx < 5 and line.startswith("[//]: # (Auto-generated"),
             log_func=lambda message: print(message)
         )
