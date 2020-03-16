@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.0.3
+
+- Added index parameter in filter_func.
+- Changed from current working path to file directory path in `gen_docs.py` script.
+
 ## v0.0.2
 
 - Added default values for the builder classes.

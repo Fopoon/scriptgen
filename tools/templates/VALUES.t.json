@@ -10,5 +10,5 @@
     "${python_development_status}": "1 - Planning",
     "${readme_file}": "README.md",
     "${repo_link}": "https://github.com/Fopoon/scriptgen",
-    "${version}": "0.0.2-post1"
+    "${version}": "0.0.3"
 }
