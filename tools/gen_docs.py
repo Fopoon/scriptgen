@@ -1,5 +1,4 @@
 from json import loads
-from os import getcwd
 from pathlib import Path
 from typing import Dict
 
@@ -35,22 +34,22 @@ def get_text(
 
 
 if __name__ == "__main__":
-    cwp = Path(getcwd())
+    fdp = Path(__file__).parent
 
     templates_dir_name = "templates"
 
     # scriptgen/tools/templates/VALUES.t.json
-    json_path = cwp / templates_dir_name / "VALUES.t.json"
+    json_path = fdp / templates_dir_name / "VALUES.t.json"
     json_text = json_path.read_text()
     json = loads(json_text)
 
     templates = {
         # scriptgen/tools/templates/README.t.md → scriptgen/README.md
-        (cwp / templates_dir_name / "README.t.md"): (cwp.parent / "README.md"),
+        (fdp / templates_dir_name / "README.t.md"): (fdp.parent / "README.md"),
         # scriptgen/tools/templates/CONTRIBUTING.t.md → scriptgen/CONTRIBUTING.md
-        (cwp / templates_dir_name / "CONTRIBUTING.t.md"): (cwp.parent / "CONTRIBUTING.md"),
+        (fdp / templates_dir_name / "CONTRIBUTING.t.md"): (fdp.parent / "CONTRIBUTING.md"),
         # scriptgen/tools/templates/setup.t.py → scriptgen/setup.py
-        (cwp / templates_dir_name / "setup.t.py"): (cwp.parent / "setup.py")
+        (fdp / templates_dir_name / "setup.t.py"): (fdp.parent / "setup.py")
     }
 
     for template_path, target_path in templates.items():
