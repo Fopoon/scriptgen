@@ -8,9 +8,10 @@
     "${license_type}": "MIT",
     "${merge_term}": "pull request",
     "${project_name}": "scriptgen",
+    "${pypi_link}": "https://pypi.org/project/scriptgen",
     "${python_development_status}": "1 - Planning",
     "${readme_file}": "README.md",
     "${repo_host}": "github",
     "${repo_link}": "https://github.com/Fopoon/scriptgen",
-    "${version}": "0.0.3.post1"
+    "${version}": "0.0.3.post2"
 }

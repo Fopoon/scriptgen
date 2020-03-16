@@ -3,12 +3,12 @@
 [//]: # (badges)
 [![Repo](https://img.shields.io/badge/repo-${repo_host}-${badge_color})](${repo_link})
 [![Version](https://img.shields.io/badge/version-${version}-brightgreen.svg)](${repo_link}/releases)
-![PyPI](https://img.shields.io/pypi/v/${project_name})
+[![PyPI](https://img.shields.io/pypi/v/${project_name})](${pypi_link}/#history)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/${project_name})
 ![PyPI - Status](https://img.shields.io/pypi/status/${project_name})
-![PyPI - License](https://img.shields.io/pypi/l/${project_name})
+[![PyPI - License](https://img.shields.io/pypi/l/${project_name})](${license_file})
 ![PyPI - Format](https://img.shields.io/pypi/format/${project_name})
-![PyPI - Downloads](https://img.shields.io/pypi/dm/${project_name})
+[![PyPI - Downloads](https://img.shields.io/pypi/dm/${project_name})](${pypi_link}/#files)
 
 ${description}
 
