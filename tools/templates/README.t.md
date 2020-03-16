@@ -1,6 +1,8 @@
 # ${project_name}
 
 [//]: # (badges)
+[![Repo](https://img.shields.io/badge/repo-${repo_host}-${badge_color})](${repo_link})
+[![Version](https://img.shields.io/badge/version-${version}-brightgreen.svg)](${repo_link}/releases)
 ![PyPI](https://img.shields.io/pypi/v/${project_name})
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/${project_name})
 ![PyPI - Status](https://img.shields.io/pypi/status/${project_name})

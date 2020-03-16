@@ -1,8 +1,10 @@
-[//]: # (Auto-generated: 2020-03-15T13:57:00.620912)
+[//]: # (Auto-generated: 2020-03-16T04:57:46.722755)
 
 # scriptgen
 
 [//]: # (badges)
+[![Repo](https://img.shields.io/badge/repo-github-brightgreen)](https://github.com/Fopoon/scriptgen)
+[![Version](https://img.shields.io/badge/version-0.0.3.post1-brightgreen.svg)](https://github.com/Fopoon/scriptgen/releases)
 ![PyPI](https://img.shields.io/pypi/v/scriptgen)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/scriptgen)
 ![PyPI - Status](https://img.shields.io/pypi/status/scriptgen)

@@ -1,4 +1,5 @@
 {
+    "${badge_color}": "brightgreen",
     "${changelog_file}": "CHANGELOG.md",
     "${codeofconduct_file}": "CODE_OF_CONDUCT.md",
     "${contributing_file}": "CONTRIBUTING.md",
@@ -9,6 +10,7 @@
     "${project_name}": "scriptgen",
     "${python_development_status}": "1 - Planning",
     "${readme_file}": "README.md",
+    "${repo_host}": "github",
     "${repo_link}": "https://github.com/Fopoon/scriptgen",
-    "${version}": "0.0.3"
+    "${version}": "0.0.3.post1"
 }
