@@ -4,3 +4,4 @@
 from .core_utils import UtilsTestCase
 from .templates_csharp import CSharpTemplateTestCase
 from .templates_markdown import MarkdownTemplateTestCase
+from .templates_xml import XmlTemplateTestCase

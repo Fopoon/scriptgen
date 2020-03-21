@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.0.4
+
+- Added XML templates.
+
 ## v0.0.3
 
 - Added index parameter in filter_func.

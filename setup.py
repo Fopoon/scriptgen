@@ -5,7 +5,7 @@ from pathlib import Path
 from setuptools import find_packages, setup
 
 NAME = 'scriptgen'
-VERSION = '0.0.3.post2'
+VERSION = '0.0.4'
 DESCRIPTION = 'A collection of script generation helpers and templates.'
 HOME = Path(__file__).parent
 README = (HOME / 'README.md').read_text()
