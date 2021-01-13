@@ -3,6 +3,8 @@
 
 from unittest import TestCase
 
+from scriptgen import StringBuilder, BlockBuilder
+
 from scriptgen.templates.csharp import \
     csharp_autogen, \
     csharp_block, \
@@ -12,10 +14,12 @@ from scriptgen.templates.csharp import \
     csharp_doc, \
     csharp_for_loop, \
     csharp_foreach_loop, \
+    csharp_if, \
     csharp_method, \
     csharp_namespace, \
     csharp_parameters, \
     csharp_region, \
+    csharp_switch, \
     csharp_try_catch, \
     csharp_usings
 
@@ -125,6 +129,17 @@ class CSharpTemplateTestCase(TestCase):
 """
         self.assertEqual(expected_str, foreach_loop_str)
 
+    def test_csharp_if(self):
+        cs_if = csharp_if("true")
+        cs_if.wl("int x;")
+        if_str = str(cs_if)
+        expected_str = """if (true)
+{
+    int x;
+}
+"""
+        self.assertEqual(expected_str, if_str)
+
     def test_csharp_method_no_parameters(self):
         cs_method = csharp_method(
             "MethodName",
@@ -209,6 +224,90 @@ class CSharpTemplateTestCase(TestCase):
 #endregion RegionName
 """
         self.assertEqual(expected_str, region_str)
+
+    def test_csharp_switch(self):
+        bb = BlockBuilder()
+        bb.wl("x += 3;")
+        bb.wl("x *= 2;")
+        switch_str = str(csharp_switch(
+            "s",
+            [
+                ("\"hello\"", "x += 1;"),
+                ("\"world\"", bb)
+            ]
+        ))
+        expected_str = """switch (s)
+{
+    case "hello":
+        x += 1;
+        break;
+    case "world":
+        x += 3;
+        x *= 2;
+        break;
+}
+"""
+        self.assertEqual(expected_str, switch_str)
+
+    def test_csharp_switch_with_str_default_case(self):
+        bb = BlockBuilder()
+        bb.wl("x += 3;")
+        bb.wl("x *= 2;")
+        switch_str = str(csharp_switch(
+            "s",
+            [
+                ("\"hello\"", "x += 1;"),
+                ("\"world\"", bb)
+            ],
+            "x = 0;"
+        ))
+        expected_str = """switch (s)
+{
+    case "hello":
+        x += 1;
+        break;
+    case "world":
+        x += 3;
+        x *= 2;
+        break;
+    default:
+        x = 0;
+        break;
+}
+"""
+        self.assertEqual(expected_str, switch_str)
+
+    def test_csharp_switch_with_block_default_case(self):
+        bb = BlockBuilder()
+        bb.wl("x += 3;")
+        bb.wl("x *= 2;")
+        dft_bb = BlockBuilder()
+        dft_bb.wl("x = 0;")
+        dft_bb.wl("y = 0;")
+        switch_str = str(csharp_switch(
+            "s",
+            [
+                ("\"hello\"", "x += 1;"),
+                ("\"world\"", bb)
+            ],
+            dft_bb
+        ))
+        expected_str = """switch (s)
+{
+    case "hello":
+        x += 1;
+        break;
+    case "world":
+        x += 3;
+        x *= 2;
+        break;
+    default:
+        x = 0;
+        y = 0;
+        break;
+}
+"""
+        self.assertEqual(expected_str, switch_str)
 
     def test_csharp_try_catch(self):
         cs_tc, cs_try, cs_catch = csharp_try_catch()

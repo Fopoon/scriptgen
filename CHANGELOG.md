@@ -2,6 +2,8 @@
 
 ## v0.0.5
 - Fixed multiple new lines in Windows.
+- Added more C# templates.
+
 ## v0.0.4
 
 - Added XML templates.

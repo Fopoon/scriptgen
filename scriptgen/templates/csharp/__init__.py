@@ -11,9 +11,11 @@ from ._csharp import \
     csharp_doc, \
     csharp_for_loop, \
     csharp_foreach_loop, \
+    csharp_if, \
     csharp_method, \
     csharp_namespace, \
     csharp_parameters, \
     csharp_region, \
+    csharp_switch, \
     csharp_try_catch, \
     csharp_usings

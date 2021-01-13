@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from typing import List
+from typing import List, Tuple, Union
 
 from scriptgen import BlockBuilder, IndentType, StringBuilder, timestamp
 
@@ -88,6 +88,14 @@ def csharp_doc(*args: str) -> StringBuilder:
     return sb
 
 
+def csharp_if(condition: str) -> StringBuilder:
+    header = f"if ({condition})"
+    csb = CSharpBlockBuilder(
+        header=header
+    )
+    return csb
+
+
 def csharp_for_loop(
         var_name: str = "i",
         initial_val: str = "0",
@@ -160,6 +168,32 @@ def csharp_region(region_name: str) -> StringBuilder:
         footer=f"{StringBuilder.new_line}#endregion {region_name}{StringBuilder.new_line}",
     )
     return bb
+
+
+def csharp_switch(
+        expression: str,
+        cases: List[Tuple[str, Union[str, BlockBuilder]]],
+        default_case_block: Union[str, BlockBuilder] = None
+) -> StringBuilder:
+    header = f"switch ({expression})"
+    csb = CSharpBlockBuilder(
+        header=header
+    )
+    for case, str_block in cases:
+        csb.wl(f"case {case}:")
+        if isinstance(str_block, str):
+            csb.wl(str_block, addtl_indent_len=1)
+        else:
+            csb.wb(str_block)
+        csb.wl("break;", addtl_indent_len=1)
+    if default_case_block is not None:
+        csb.wl("default:")
+        if isinstance(default_case_block, str):
+            csb.wl(default_case_block, addtl_indent_len=1)
+        else:
+            csb.wb(default_case_block)
+        csb.wl("break;", addtl_indent_len=1)
+    return csb
 
 
 def csharp_try_catch(
