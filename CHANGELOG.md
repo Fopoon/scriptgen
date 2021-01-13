@@ -1,5 +1,7 @@
 # Changelog
 
+## v0.0.5
+- Fixed multiple new lines in Windows.
 ## v0.0.4
 
 - Added XML templates.

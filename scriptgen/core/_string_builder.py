@@ -15,7 +15,7 @@ class IndentType(Enum):
 class StringBuilder:
 
     indent_tab: str = "\t"
-    new_line: str = linesep
+    new_line: str = "\n"
 
     default_indent_len: int = 0
     default_indent_space_len: int = 4
