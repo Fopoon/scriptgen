@@ -13,5 +13,5 @@
     "${readme_file}": "README.md",
     "${repo_host}": "github",
     "${repo_link}": "https://github.com/Fopoon/scriptgen",
-    "${version}": "0.0.4"
+    "${version}": "0.0.5"
 }

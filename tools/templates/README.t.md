@@ -8,7 +8,7 @@
 ![PyPI - Status](https://img.shields.io/pypi/status/${project_name})
 [![PyPI - License](https://img.shields.io/pypi/l/${project_name})](${license_file})
 ![PyPI - Format](https://img.shields.io/pypi/format/${project_name})
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/${project_name})](${pypi_link}/#files)
+[![Downloads](https://pepy.tech/badge/${project_name})](https://pepy.tech/project/${project_name})
 
 ${description}
 

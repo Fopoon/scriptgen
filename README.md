@@ -1,16 +1,16 @@
-[//]: # (Auto-generated: 2020-03-21T04:41:54.786134)
+[//]: # (Auto-generated: 2021-01-13T09:44:07.865904)
 
 # scriptgen
 
 [//]: # (badges)
 [![Repo](https://img.shields.io/badge/repo-github-brightgreen)](https://github.com/Fopoon/scriptgen)
-[![Version](https://img.shields.io/badge/version-0.0.4-brightgreen.svg)](https://github.com/Fopoon/scriptgen/releases)
+[![Version](https://img.shields.io/badge/version-0.0.5-brightgreen.svg)](https://github.com/Fopoon/scriptgen/releases)
 [![PyPI](https://img.shields.io/pypi/v/scriptgen)](https://pypi.org/project/scriptgen/#history)
 ![PyPI - Python Version](https://img.shields.io/pypi/pyversions/scriptgen)
 ![PyPI - Status](https://img.shields.io/pypi/status/scriptgen)
 [![PyPI - License](https://img.shields.io/pypi/l/scriptgen)](LICENSE.txt)
 ![PyPI - Format](https://img.shields.io/pypi/format/scriptgen)
-[![PyPI - Downloads](https://img.shields.io/pypi/dm/scriptgen)](https://pypi.org/project/scriptgen/#files)
+[![Downloads](https://pepy.tech/badge/scriptgen)](https://pepy.tech/project/scriptgen)
 
 A collection of script generation helpers and templates.
 
